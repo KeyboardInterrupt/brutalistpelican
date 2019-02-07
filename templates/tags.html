@@ -4,11 +4,11 @@
 
 {% block content %}
 <div class="page-title">
-        <h1>tags</h1>
+        <h1>Tags</h1>
 </div>
 <div class="articles">
     <ul>
-    {% for tag, articles in tags %}
+    {% for tag, articles in tags|sort_by_article_count%}
         <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> <span class="count">({{ articles|count }})</span></li>
     {% endfor %}
     </ul>
